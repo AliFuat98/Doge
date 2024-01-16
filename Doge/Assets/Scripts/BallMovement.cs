@@ -4,6 +4,7 @@ public class BallMovement : MonoBehaviour {
   [SerializeField] float horizontalSpeed = 2.0f;
   [SerializeField] float bounceForce = 5f;
   Rigidbody2D rb;
+  int direction = 1;
 
   void Start() {
     rb = GetComponent<Rigidbody2D>();
@@ -11,16 +12,28 @@ public class BallMovement : MonoBehaviour {
 
   void FixedUpdate() {
     // Set the constant horizontal velocity
-    rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);
+    rb.velocity = new Vector2(horizontalSpeed * direction, rb.velocity.y);
+  }
+
+  public void GoLeft() {
+    direction = 1;
+  }
+
+  public void GoRight() {
+    direction = -1;
+  }
+
+  public void ToggleDirection() {
+    direction *= -1;
   }
 
   void OnCollisionEnter2D(Collision2D collision) {
     if (collision.gameObject.TryGetComponent(out GroundMarker _)) {
       rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
     }
-  }
 
-  public void ChangeHorizontalSpeed(bool change) {
-    horizontalSpeed = change ? -horizontalSpeed : horizontalSpeed;
+    if (collision.gameObject.TryGetComponent(out WallMarker _)) {
+      ToggleDirection();
+    }
   }
 }

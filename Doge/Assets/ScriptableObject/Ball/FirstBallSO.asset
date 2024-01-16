@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc6b6dbc3e54424a9d00f2b135827e3, type: 3}
   m_Name: FirstBallSO
   m_EditorClassIdentifier: 
-  scale: 1
-  color: {r: 0.990566, g: 0.38781592, b: 0.38781592, a: 0}
+  scale: {x: 0.5, y: 0.5, z: 0.5}
+  color: {r: 0.0877495, g: 0.9433962, b: 0, a: 1}
   mass: 1
   NextSO: {fileID: 0}

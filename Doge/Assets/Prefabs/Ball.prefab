@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3408dc7a44037648a930f86202d50bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 0
+  horizontalSpeed: 2
   bounceForce: 5
 --- !u!114 &5606890342416949944
 MonoBehaviour:
@@ -176,5 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505553a627c905a4cb1c4f52db7cb6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallPoolSO: {fileID: 11400000, guid: a23ffc2e2119c70449c52eebe5c7ad79, type: 2}
+  ballPoolSO: {fileID: 11400000, guid: a23ffc2e2119c70449c52eebe5c7ad79, type: 2}
   currentBallSO: {fileID: 11400000, guid: 181fd13641fac9943892c3ae69d1b28d, type: 2}
+  splitForce: 2

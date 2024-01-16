@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GameInput : MonoBehaviour {
@@ -6,7 +5,7 @@ public class GameInput : MonoBehaviour {
 
   private PlayerInputActions playerInputActions;
 
-  public event EventHandler OnJumpAction;
+  //public event EventHandler OnJumpAction;
 
   private void Awake() {
     Instance = this;
