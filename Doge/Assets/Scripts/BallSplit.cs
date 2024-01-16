@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BallSplit : MonoBehaviour
-{
+public class BallSplit : MonoBehaviour {
+  [SerializeField] PoolManagerSO BallPoolSO;
+
   [SerializeField] BallSO currentBallSO;
 
   void Update() {
@@ -13,10 +12,7 @@ public class BallSplit : MonoBehaviour
   }
 
   void Split() {
-    //In
-  }
-
-  public BallSO GeCurrentBallSO() {
-    return currentBallSO;
+    GameObject newBall = BallPoolSO.GetObject();
+    Debug.Log(newBall.name);
   }
 }

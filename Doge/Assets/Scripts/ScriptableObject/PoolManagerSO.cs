@@ -1,19 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour {
-  [SerializeField] int poolSize = 10;
-  [SerializeField] Transform parentForObject;
-  [SerializeField] GameObject prefab;
+[CreateAssetMenu()]
+public class PoolManagerSO : ScriptableObject {
+  public int poolSize = 10;
+  public GameObject prefab;
   Queue<GameObject> pool = new();
+  Transform parent;
 
-  private void Start() {
-    InitializePool();
-  }
+  public void InitializePool(Transform parent) {
+    this.parent = parent;
 
-  public void InitializePool() {
     for (int i = 0; i < poolSize; i++) {
-      GameObject obj = Instantiate(prefab, parentForObject);
+      GameObject obj = Instantiate(prefab, parent);
       obj.SetActive(false);
       pool.Enqueue(obj);
     }
@@ -36,7 +35,7 @@ public class ObjectPool : MonoBehaviour {
 
   private void ExpandPool(int count) {
     for (int i = 0; i < count; i++) {
-      GameObject obj = Instantiate(prefab, parentForObject);
+      GameObject obj = Instantiate(prefab, parent);
       obj.SetActive(false);
       pool.Enqueue(obj);
     }

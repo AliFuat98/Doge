@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 356239029}
   - component: {fileID: 356239030}
   m_Layer: 0
-  m_Name: BallSpawner
+  m_Name: BallPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,9 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93386ecb41aa4d8449102742ef530279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolSize: 30
-  parentForObject: {fileID: 356239029}
-  prefab: {fileID: 7325976847732800806, guid: 5247113c56c122e4f8073cf8b03de745, type: 3}
+  poolManager: {fileID: 11400000, guid: a23ffc2e2119c70449c52eebe5c7ad79, type: 2}
 --- !u!1 &398898824
 GameObject:
   m_ObjectHideFlags: 0
