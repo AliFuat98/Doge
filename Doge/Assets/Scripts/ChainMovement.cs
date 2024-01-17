@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class ChainMovement : MonoBehaviour {
   [SerializeField] float speed;
+  [SerializeField] float timeForDestroy;
   [SerializeField] GameObject ArrowHeadGO;
 
   SpriteRenderer spriteRenderer;
@@ -10,6 +12,8 @@ public class ChainMovement : MonoBehaviour {
   private void Start() {
     spriteRenderer = GetComponent<SpriteRenderer>();
     boxCollider2D = GetComponent<BoxCollider2D>();
+
+    Destroy(gameObject, timeForDestroy);
   }
 
   private void Update() {
@@ -21,6 +25,7 @@ public class ChainMovement : MonoBehaviour {
     boxCollider2D.size = new Vector2(boxCollider2D.size.x, newHeight);
     boxCollider2D.offset = new Vector2(boxCollider2D.offset.x, newHeight / 2);
 
+    // change arrow head position
     Vector3 arrowHeadLocalPosition = ArrowHeadGO.transform.localPosition;
     arrowHeadLocalPosition.y = newHeight;
     ArrowHeadGO.transform.localPosition = arrowHeadLocalPosition;

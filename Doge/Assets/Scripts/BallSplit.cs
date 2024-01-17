@@ -5,12 +5,6 @@ public class BallSplit : MonoBehaviour {
   [SerializeField] BallSO currentBallSO;
   [SerializeField] float splitForce = 5f;
 
-  void Update() {
-    if (Input.GetKeyDown(KeyCode.Space)) {
-      Split();
-    }
-  }
-
   void Split() {
     if (currentBallSO.NextSO == null) {
       Debug.Log("destroyed the ball");

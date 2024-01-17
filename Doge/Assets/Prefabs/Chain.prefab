@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a907f886b7f653429f346951cc70860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 25
+  timeForDestroy: 2
   ArrowHeadGO: {fileID: 7718970513605923041}
 --- !u!1 &7718970513605923041
 GameObject:

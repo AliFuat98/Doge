@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameInput : MonoBehaviour {
@@ -5,7 +6,7 @@ public class GameInput : MonoBehaviour {
 
   private PlayerInputActions playerInputActions;
 
-  //public event EventHandler OnJumpAction;
+  public event EventHandler OnChainAction;
 
   private void Awake() {
     Instance = this;
@@ -13,12 +14,12 @@ public class GameInput : MonoBehaviour {
     playerInputActions = new PlayerInputActions();
     playerInputActions.Player.Enable();
 
-    //playerInputActions.Player.Move.performed += Move_performed;
+    playerInputActions.Player.Chain.performed += Chain_performed;
   }
 
-  //public void Move_performed(InputAction.CallbackContext context) {
-  //  OnJumpAction?.Invoke(this, EventArgs.Empty);
-  //}
+  private void Chain_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+    OnChainAction?.Invoke(this, EventArgs.Empty);
+  }
 
   public float GetMovementAxis() {
     float inputVector = playerInputActions.Player.Move.ReadValue<float>();
@@ -26,7 +27,7 @@ public class GameInput : MonoBehaviour {
   }
 
   private void OnDestroy() {
-    //playerInputActions.Player.Move.performed -= Move_performed;
+    playerInputActions.Player.Move.performed -= Chain_performed;
     playerInputActions.Dispose();
   }
 }
