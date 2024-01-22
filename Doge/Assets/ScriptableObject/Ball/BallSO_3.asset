@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc6b6dbc3e54424a9d00f2b135827e3, type: 3}
+  m_Name: BallSO_3
+  m_EditorClassIdentifier: 
+  scale: {x: 1.5, y: 1.5, z: 1.5}
+  color: {r: 0.38823533, g: 0.4819091, b: 0.99215686, a: 1}
+  mass: 0.65
+  sortOrder: 4
+  NextSO: {fileID: 11400000, guid: 181fd13641fac9943892c3ae69d1b28d, type: 2}

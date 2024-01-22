@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 089940967bcbd8e4dba9e58c340f6ee4, type: 3}
-  m_Name: BallPoolManagerSO
+  m_Script: {fileID: 11500000, guid: 0bc6b6dbc3e54424a9d00f2b135827e3, type: 3}
+  m_Name: BallSO_5
   m_EditorClassIdentifier: 
-  poolSize: 25
-  prefab: {fileID: 7325976847732800806, guid: 5247113c56c122e4f8073cf8b03de745, type: 3}
+  scale: {x: 2.5, y: 2.5, z: 2.5}
+  color: {r: 0, g: 1, b: 0.9902086, a: 1}
+  mass: 0.55
+  sortOrder: 2
+  NextSO: {fileID: 11400000, guid: fe3f900c1dcd7084a9c3fe6d12c97458, type: 2}

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class ChainMovement : MonoBehaviour {
@@ -8,6 +7,7 @@ public class ChainMovement : MonoBehaviour {
 
   SpriteRenderer spriteRenderer;
   BoxCollider2D boxCollider2D;
+  int destroyedBallCount = 0;
 
   private void Start() {
     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,5 +29,17 @@ public class ChainMovement : MonoBehaviour {
     Vector3 arrowHeadLocalPosition = ArrowHeadGO.transform.localPosition;
     arrowHeadLocalPosition.y = newHeight;
     ArrowHeadGO.transform.localPosition = arrowHeadLocalPosition;
+  }
+
+  void OnCollisionEnter2D(Collision2D collision) {
+    if (collision.gameObject.TryGetComponent(out CeilMarker _)) {
+      Destroy(gameObject);
+    }
+
+    if (collision.gameObject.TryGetComponent(out BallSplit ballSplit) && destroyedBallCount == 0) {
+      ballSplit.Split();
+      destroyedBallCount = 1;
+      Destroy(gameObject);
+    }
   }
 }

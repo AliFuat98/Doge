@@ -5,8 +5,5 @@ public class BallPool : MonoBehaviour {
 
   private void Start() {
     poolManager.InitializePool(transform);
-
-    // first ball
-    poolManager.GetObject();
   }
 }

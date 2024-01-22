@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerChain : MonoBehaviour {
@@ -14,6 +12,7 @@ public class PlayerChain : MonoBehaviour {
 
   private void GameInput_OnChainAction(object sender, System.EventArgs e) {
     if (lastChain != null) {
+      // one chain is on the way wait for it
       return;
     }
     lastChain = Instantiate(chainPrefab, spawnPoint.position, Quaternion.identity);

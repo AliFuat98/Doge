@@ -35,5 +35,9 @@ public class BallMovement : MonoBehaviour {
     if (collision.gameObject.TryGetComponent(out WallMarker _)) {
       ToggleDirection();
     }
+
+    if (collision.gameObject.TryGetComponent(out CeilMarker _)) {
+      gameObject.SetActive(false);
+    }
   }
 }
